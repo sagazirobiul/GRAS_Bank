@@ -1,0 +1,16 @@
+.login-area {
+    margin-top: 10rem;
+}
+.submit-area {
+    margin-top: 4rem;
+    border: 1px solid #efefef;
+    box-shadow: 10px 10px 15px #dddddd;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+}
+.button {
+    padding: 0.5rem 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.4rem;
+}
