@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,69 @@
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
     <!-- Link Main Css -->
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="shortcut icon" href="assets/images/logo.jfif" type="image/x-icon">
 </head>
+
 <body>
-    <div class="login-area container">
-        <h1 class="text-center">Welcome to <span class="text-primary">QueZed</span> Bank</h1>
-        <div class="submit-area mx-auto">
-            <h2>Login</h2>
-            <br>
-            <input type="text" class="form-control">
-            <br>
-            <input type="password" class="form-control">
-            <br>
-            <button type="button" class="btn btn-primary button">Enter</button>
+    <div class="container">
+        <div id="login-area">
+            <h1 class="text-center">Welcome to <span class="text-success">QueZed</span> Bank</h1>
+            <div class="submit-area mx-auto">
+                <h2>Login</h2>
+                <br>
+                <input type="text" class="form-control input" placeholder="Enter your email">
+                <br>
+                <input type="password" class="form-control input" placeholder="Password">
+                <br>
+                <button id="login" type="button" class="btn btn-success button">Enter</button>
+            </div>
+        </div>
+        <div id="transaction-area">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="deal deposit">
+                        <h3>Deposit</h3>
+                        <h1>$ <span id="current-deposit">00</span></h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="deal withdraw">
+                        <h3>withdraw</h3>
+                        <h1>$ <span id="current-withdraw">00</span></h1>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="deal balance">
+                        <h3>Balance</h3>
+                        <h1>$ <span id="currentBalance">1850</span> </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="submit-area">
+                        <h2>Deposit</h2>
+                        <br>
+                        <input id="deposit-amount" type="text" class="form-control input" placeholder="$ amount you want to deposit">
+                        <br>
+                        <button id="deposit-btn" class="btn btn-success button">Deposit</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-area">
+                        <h2>Withdraw</h2>
+                        <br>
+                        <input id="withdrawAmount" type="text" class="form-control input" placeholder="$ amount you want to withdraw">
+                        <br>
+                        <button id="withdraw-btn" class="btn btn-success button">Withdraw</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <!-- Link JavaScript -->
+    <script src="assets/index.js"></script>
 </body>
+
 </html>
