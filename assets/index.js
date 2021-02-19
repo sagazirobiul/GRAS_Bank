@@ -13,7 +13,6 @@ const depositBtn = document.getElementById('deposit-btn');
 depositBtn.addEventListener('click', function () {
     const depositNumber = getInputNumber('deposit-amount');
     if (depositNumber > 0) {
-        console.log(depositNumber);
         updateData("current-deposit", depositNumber);
         updateData("currentBalance", depositNumber);
         depositAmount = document.getElementById('deposit-amount').value = "";
