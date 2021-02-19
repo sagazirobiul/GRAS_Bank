@@ -11,13 +11,15 @@ loginBtn.addEventListener('click', function () {
 // Deposit button event handler
 const depositBtn = document.getElementById('deposit-btn');
 depositBtn.addEventListener('click', function () {
-    const depositInput = document.getElementById('deposit-amount').value;
-    if (depositInput > 0) {
-        const depositNumber = getInputNumber('deposit-amount');
+    const depositNumber = getInputNumber('deposit-amount');
+    if (depositNumber > 0) {
         console.log(depositNumber);
         updateData("current-deposit", depositNumber);
         updateData("currentBalance", depositNumber);
         depositAmount = document.getElementById('deposit-amount').value = "";
+    }
+    else {
+        alert('Please put the right number :)')
     }
 });
 
@@ -25,16 +27,22 @@ depositBtn.addEventListener('click', function () {
 // Withdraw button event handler
 const withdrawBtn = document.getElementById('withdraw-btn');
 withdrawBtn.addEventListener('click', function () {
-    const withdrawInput = document.getElementById('withdrawAmount').value;
-    if (withdrawInput > 0) {
-        const withdrawNumber = getInputNumber("withdrawAmount");
-        updateData("current-withdraw", withdrawNumber);
-        updateData("currentBalance", -1 * withdrawNumber);
-        depositAmount = document.getElementById('withdrawAmount').value = "";
+    const withdrawNumber = getInputNumber('withdrawAmount');
+    const currentBalanceCheck = parseFloat(document.getElementById('currentBalance').innerText)
+    if(currentBalanceCheck > 0){
+        if (withdrawNumber > 0 ) {
+            updateData("current-withdraw", withdrawNumber);
+            updateData("currentBalance", -1 * withdrawNumber);
+            depositAmount = document.getElementById('withdrawAmount').value = "";
+        }
+        else {
+            alert('Please put the right number :)')
+        }
     }
 })
 
 
+// Get Input Id;
 function getInputNumber(id) {
     const amount = document.getElementById(id).value;
     const number = parseFloat(amount);
@@ -42,6 +50,7 @@ function getInputNumber(id) {
 }
 
 
+// Calculation 
 function updateData(id, numberVar) {
     const current = document.getElementById(id).innerText;
     const currentNumber = parseFloat(current);
